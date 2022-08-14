@@ -1,11 +1,22 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Country from './components/Country';
+import Countries from './components/allCountries';
+import './css/App.css';
 
-export default function App() {
+const App = () => {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <React.Fragment>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/all" exact component={Countries} />
+          <Route path="/all/:country" exact component={Country} />
+        </Switch>
+      </Router>
+    </React.Fragment>
   );
-}
+};
+
+export default App;
