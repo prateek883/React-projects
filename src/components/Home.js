@@ -2,8 +2,7 @@ import React from 'react';
 import img from '../img.png';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
-
-export default function Home() {
+const Home = (props) => {
   return (
     <React.Fragment>
       <Nav />
@@ -17,7 +16,31 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <div className="right">
+          <img
+            src={
+              'https://static.vecteezy.com/system/resources/previews/002/759/924/original/stamp-with-official-country-flag-pattern-and-old-grunge-texture-and-countries-name-rectangle-shape-set-6-of-12-on-this-series-all-national-flags-of-the-world-vector.jpg'
+            }
+            className="hero-image"
+            alt=""
+          />
+        </div>
       </div>
+      <footer className="text-center mt-8">
+        <p>
+          Made with <i className="fas fa-heart"></i> by Omkar
+        </p>
+        <a
+          href="https://github.com/OmkarK45/react-countries"
+          className="py-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </footer>
     </React.Fragment>
   );
-}
+};
+
+export default Home;
